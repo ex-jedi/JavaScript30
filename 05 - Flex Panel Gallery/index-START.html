@@ -62,11 +62,20 @@
       margin: 0;
       width: 100%;
       transition: transform 0.5s;
-      outline: 1px solid red;
       flex: 1 0 auto;
       display: flex;
       align-items: center;
       justify-content: center;
+    }
+    
+    .panel > *:first-child {
+      outline: 1px solid red;
+      transform: translateY(-100%);
+    }
+   
+    .panel > *:last-child {
+      outline: 1px solid red;
+      transform: translateY(100%);
     }
 
     .panel p {
