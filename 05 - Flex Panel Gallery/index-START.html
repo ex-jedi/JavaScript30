@@ -93,6 +93,9 @@
       flex: 5;
     }
 
+    .panel.open-active > *:first-child { transform: translateY(0); }
+    .panel.open-active > *:last-child { transform: translateY(0); }
+
   </style>
 
 
@@ -131,8 +134,17 @@
     function toggleOpen() {
       this.classList.toggle('open')
     }
+   
+    function toggleActive(e) {
+      if (e.propertyName.includes('flex')) {
+        console.log(e.propertyName);
+        this.classList.toggle('open-active');
+      }
+    }
 
     panels.forEach(panel => panel.addEventListener('click', toggleOpen))
+
+    panels.forEach(panel => panel.addEventListener('transitionend', toggleActive))
 
   </script>
 
