@@ -24,6 +24,13 @@ const prom = fetch(endpoint)
   .then(data => cities.push(...data))
 console.log(cities);
 
+
+function findMatches(wordToMatch, cities) {
+  return cities.filter(place => {
+    // Return city which matches query
+  })
+}
+
 </script>
 </body>
 </html>
