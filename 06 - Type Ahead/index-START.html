@@ -21,8 +21,8 @@ const cities = [];
 // Get data and convert it to JSON
 const prom = fetch(endpoint)
   .then(blob => blob.json())
-  .then(data => console.log(data))
-console.log(prom);
+  .then(data => cities.push(...data))
+console.log(cities);
 
 </script>
 </body>
