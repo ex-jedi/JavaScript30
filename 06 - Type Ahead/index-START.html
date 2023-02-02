@@ -19,10 +19,9 @@ const endpoint = 'https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb
 
 const cities = [];
 // Get data and convert it to JSON
-const prom = fetch(endpoint)
+fetch(endpoint)
   .then(blob => blob.json())
   .then(data => cities.push(...data))
-
 
 function findMatches(wordToMatch, cities) {
   return cities.filter(place => {
