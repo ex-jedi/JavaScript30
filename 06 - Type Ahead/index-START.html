@@ -38,9 +38,13 @@ function findMatches(wordToMatch, cities){
 function displayMatches(){
   const matchArray = findMatches(this.value, cities)
   const resultsHTML = matchArray.map(place => {
+    const cityHl = new RegExp(this.value, 'gi');
+    const stateHl = new RegExp(this.value, 'gi');
+    const highlightedCity = place.city.replace(cityHl,`<span class="hl">${this.value}</span>`)
+    const highlightedState = place.state.replace(stateHl,`<span class="hl">${this.value}</span>`)
     return `
       <li>
-        <span class="name">${place.city}, ${place.state}</span>
+        <span class="name">${highlightedCity}, ${highlightedState}</span>
         <span class="population">${numberWithCommas(place.population)}</span>
        </li> 
     `
