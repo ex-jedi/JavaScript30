@@ -99,8 +99,15 @@
 
 const checkboxes = document.querySelectorAll('input[type="checkbox"]');
 
+let lastChecked;
+
 function handleCheck(e) {
-  console.log(e.target);
+
+  if(e.shiftKey && this.checked) {
+    console.log('Shift');
+  }
+  
+  lastChecked = this;
 }
 
 checkboxes.forEach((checkbox) => checkbox.addEventListener('click', handleCheck) )
