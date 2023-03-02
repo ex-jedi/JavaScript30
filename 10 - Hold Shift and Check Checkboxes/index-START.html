@@ -99,14 +99,11 @@
 
 const checkboxes = document.querySelectorAll('input[type="checkbox"]');
 
-function clickHandler(e) {
+function handleCheck(e) {
   console.log(e.target);
-  console.log(i);
 }
 
-checkboxes.forEach((checkbox, i) => checkbox.addEventListener('click', function(){
-  console.log(i)
-  }) )
+checkboxes.forEach((checkbox) => checkbox.addEventListener('click', handleCheck) )
 </script>
 </body>
 </html>
