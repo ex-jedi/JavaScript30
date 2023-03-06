@@ -24,9 +24,13 @@ function skip() {
  }
 
 function handleRangeValue() {
-  console.log(this.value);
-  console.log(this.name);
   video[this.name] = parseFloat(this.value);
+}
+
+
+function handleProgress() {
+  const percentagePlayed = (video.currentTime / video.duration) * 100;
+  progressBar.style.flexBasis = `${percentagePlayed}%`
 }
 
 // Hook up event listeners
@@ -36,3 +40,4 @@ video.addEventListener('pause', updateButton);
 toggle.addEventListener('click', togglePlay);
 skipButtons.forEach(button => button.addEventListener('click', skip))
 ranges.forEach(button => button.addEventListener('mousemove', handleRangeValue))
+video.addEventListener('timeupdate', handleProgress);
