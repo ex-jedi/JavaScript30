@@ -49,9 +49,12 @@ video.addEventListener('timeupdate', handleProgress);
 
 let mousedown = false;
 progressBar.addEventListener('click' , scrub)
-progressBar.addEventListener('mousemove' , () => {
-  if (mousedown) scrub();
-})
-progressBar.addEventListener('mousedown' , () => mousedown = true)
-progressBar.addEventListener('mouseup' , () => mousedown = false)
+
+// progressBar.addEventListener('mousemove' , (e) => {
+//   if (mousedown) scrub(e);
+// })
+// As above but hijacking &&
+progress.addEventListener('mousemove' , (e) => mousedown && scrub(e) )
+progress.addEventListener('mousedown' , () => mousedown = true)
+progress.addEventListener('mouseup' , () => mousedown = false)
 
