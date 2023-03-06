@@ -16,21 +16,23 @@ function togglePlay() {
 
 function updateButton() {
   video.paused ? toggle.textContent = '⏸️' : toggle.textContent = '►';
-  console.log(video.paused);
 }
 
 
 function skip() {
-
   video.currentTime += parseFloat(this.dataset.skip);
-  console.log(video.currentTime);
-  console.log(this.dataset.skip);
+ }
+
+function handleRangeValue() {
+  console.log(this.value);
+  console.log(this.name);
+  video[this.name] = parseFloat(this.value);
 }
 
 // Hook up event listeners
-
 video.addEventListener('click', togglePlay);
 video.addEventListener('play', updateButton);
 video.addEventListener('pause', updateButton);
 toggle.addEventListener('click', togglePlay);
 skipButtons.forEach(button => button.addEventListener('click', skip))
+ranges.forEach(button => button.addEventListener('mousemove', handleRangeValue))
