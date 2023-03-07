@@ -8,8 +8,19 @@
 <body>
 <script>
 
+const keyPresses = [];
+const secretCode = 'markp'
+
 window.addEventListener('keyup', (e) => {
-  console.log(e.key);
+
+  keyPresses.push(e.key);
+  keyPresses.splice(-secretCode.length - 1, keyPresses.length - secretCode.length);
+
+  if(keyPresses.join('').includes(secretCode)) {
+    console.log(keyPresses.join(''));
+    cornify_add();
+  }
+
 })
 </script>
 </body>
