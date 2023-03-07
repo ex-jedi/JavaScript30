@@ -15,6 +15,9 @@ window.addEventListener('keyup', (e) => {
 
   keyPresses.push(e.key);
   keyPresses.splice(-secretCode.length - 1, keyPresses.length - secretCode.length);
+  console.log('Start' ,-secretCode.length - 1);
+  console.log('Delete', keyPresses.length - secretCode.length);
+  console.log('Array', keyPresses);
 
   if(keyPresses.join('').includes(secretCode)) {
     console.log(keyPresses.join(''));
