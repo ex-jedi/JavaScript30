@@ -58,6 +58,14 @@
       };
     }
 
+    const sliderImages = document.querySelectorAll('img');
+
+    function checkSlide(e){
+      console.count(e);
+    }
+
+    window.addEventListener('scroll', debounce(checkSlide))
+
   </script>
 
   <style>
