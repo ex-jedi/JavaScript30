@@ -60,30 +60,30 @@
 
     const sliderImages = document.querySelectorAll('img');
 
-    const line  = document.querySelector('.line');
+    // const line  = document.querySelector('.line');
 
 
     function checkSlide(e){
       // const linePos = (window.scrollY + window.innerHeight) - 100;
       // line.style.top = `${linePos}px`
       
-      sliderImages.forEach(image => {
+      sliderImages.forEach(sliderImage => {
         // Halfway through the image
-        const slideInAt = (window.scrollY + window.innerHeight) - (image.height / 2);
-        console.log('Slide in at', slideInAt);
+        const slideInAt = (window.scrollY + window.innerHeight) - sliderImage.height / 2;
+    
 
         //Bottom of the image
-        const imageBottom = image.offsetTop + image.height;
-        console.log('Image Bottom', imageBottom);
+        const imageBottom = sliderImage.offsetTop + sliderImage.height;
+
 
         // Is the image halway shown
         const isHalfShown = slideInAt > sliderImages.offsetTop;
         const isNotScrolledPast = window.scrollY < imageBottom;
 
         if (isHalfShown && isNotScrolledPast) {
-          image.classList.add('active');
+          sliderImage.classList.add('active');
         } else {
-          image.classList.remove('active');
+          sliderImage.classList.remove('active');
         }
       })
     }
