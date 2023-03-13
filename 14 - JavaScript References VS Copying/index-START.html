@@ -11,20 +11,29 @@
     let age = 100;
     let age2 = age;
 
-    console.log(age, age2);
+    // console.log(age, age2);
     
     age = 200
-    console.log(age, age2);
+    // console.log(age, age2);
 
     let name = "Dan";
     let name2 = name;
-    console.log(name, name2);
+    // console.log(name, name2);
 
     name = "Fisk"
-    console.log(name, name2);
+    // console.log(name, name2);
     
     // Let's say we have an array
     const players = ['Wes', 'Sarah', 'Ryan', 'Poppy'];
+    const team = players;
+    
+    // console.log(team);
+    // console.log(players);
+    
+    team[3] = "Terry"
+    // console.log(team);
+    // console.log(players);
+
 
     // and we want to make a copy of it.
 
@@ -39,6 +48,13 @@
     // Why? It's because that is an array reference, not an array copy. They both point to the same array!
 
     // So, how do we fix this? We take a copy instead!
+    const team2 = [...players]
+    console.log('Team 2 -', team2);
+    team[3] = "Terry"
+    console.log('Team', team);
+    console.log('Team 2', team2);
+
+
 
     // one way
 
