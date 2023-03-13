@@ -30,7 +30,7 @@
     // console.log(team);
     // console.log(players);
     
-    team[3] = "Terry"
+    // team[3] = "Terry"
     // console.log(team);
     // console.log(players);
 
@@ -49,10 +49,12 @@
 
     // So, how do we fix this? We take a copy instead!
     const team2 = [...players]
-    console.log('Team 2 -', team2);
-    team[3] = "Terry"
-    console.log('Team', team);
-    console.log('Team 2', team2);
+    console.log('Players before -', players);
+    console.log('Team 2 before -', team2);
+
+    players[3] = "Terry"
+    console.log('Players after -', players);
+    console.log('Team 2 after -', team2);
 
 
 
