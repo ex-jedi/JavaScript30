@@ -48,13 +48,13 @@
     // Why? It's because that is an array reference, not an array copy. They both point to the same array!
 
     // So, how do we fix this? We take a copy instead!
-    const team2 = [...players]
-    console.log('Players before -', players);
-    console.log('Team 2 before -', team2);
+    // const team2 = players.splice();
+    // console.log('Players before -', players);
+    // console.log('Team 2 before -', team2);
 
-    players[3] = "Terry"
-    console.log('Players after -', players);
-    console.log('Team 2 after -', team2);
+    // players[3] = "Terry"
+    // console.log('Players after -', players);
+    // console.log('Team 2 after -', team2);
 
 
 
@@ -63,8 +63,17 @@
     // or create a new array and concat the old one in
 
     // or use the new ES6 Spread
+    const team2 = [...players]
+
 
     // now when we update it, the original one isn't changed
+    console.log('Players before -', players);
+    console.log('Team 2 before -', team2);
+
+    players[3] = "Terry"
+    console.log('Players after -', players);
+    console.log('Team 2 after -', team2);
+
 
     // The same thing goes for objects, let's say we have a person object
 
