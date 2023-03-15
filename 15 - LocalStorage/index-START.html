@@ -42,6 +42,8 @@
 
     items.push(item)
     populateList(items, itemsList);
+    // Put items into local storage
+    localStorage.setItem('items', JSON.stringify(items))
     this.reset();
     
   }
