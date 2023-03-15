@@ -39,8 +39,11 @@
       text,
       done: false,
     }
+
+    items.push(item)
     this.reset();
     console.log(item);
+    console.log(items);
   }
 
   addItems.addEventListener('submit', addItem );
