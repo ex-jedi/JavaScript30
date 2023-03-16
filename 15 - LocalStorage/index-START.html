@@ -61,7 +61,13 @@
 
   function toggleDone(e) {
     if (!e.target.matches('input')) return;
-      console.log(e.target);
+      const clickedIndex = e.target.dataset.index;
+      console.log(items[clickedIndex]);
+      console.log(items[clickedIndex].done);
+      items[clickedIndex].done = !items[clickedIndex].done;
+      localStorage.setItem('items', JSON.stringify(items))
+      // Seems to work even if you don't include the below
+      populateList(items, itemsList);
   }
 
   itemsList.addEventListener('click', toggleDone)
